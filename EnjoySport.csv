@@ -1,0 +1,23 @@
+import numpy as np
+import pandas as pd
+
+# Create a sample dataset
+data = {
+    'Outlook': ['Sunny', 'Sunny', 'Rainy', 'Sunny', 'Sunny', 'Rainy', 'Rainy', 'Sunny', 'Sunny', 'Rainy'],
+    'Temperature': ['Warm', 'Warm', 'Cold', 'Warm', 'Warm', 'Cold', 'Cold', 'Warm', 'Cold', 'Warm'],
+    'Humidity': ['Normal', 'High', 'High', 'High', 'Normal', 'Normal', 'Normal', 'High', 'Normal', 'Normal'],
+    'Wind': ['Strong', 'Strong', 'Strong', 'Weak', 'Weak', 'Weak', 'Strong', 'Weak', 'Weak', 'Weak'],
+    'Water': ['Warm', 'Warm', 'Warm', 'Cool', 'Warm', 'Warm', 'Warm', 'Warm', 'Cool', 'Warm'],
+    'Forecast': ['yes', 'yes', 'no', 'yes', 'yes', 'no', 'no', 'yes', 'no', 'yes']
+}
+
+df = pd.DataFrame(data)
+
+# Save the dataset to a CSV file
+df.to_csv('sample_data.csv', index=False)
+
+# Now you can use the sample_data.csv file instead of EnjoySport.csv
+concepts = np.array(df.iloc[:, 0:-1])
+target = np.array(df.iloc[:, -1])
+
+# Rest of the code remains the same
